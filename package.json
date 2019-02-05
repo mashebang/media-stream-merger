@@ -1,0 +1,24 @@
+{
+  "name": "media-stream-merger",
+  "version": "0.0.1",
+  "description": "it merges two or more MediaStream objects, resulting in only one",
+  "main": "MediaStreamMerger.js",
+  "scripts": {
+    "build": "babel src/MediaStreamMerger.js --out-dir dist"
+  },
+  "keywords": [
+    "MediaStream",
+    "webrtc",
+    "video",
+    "merger",
+    "merger"
+  ],
+  "author": "netoguimaraes",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.1"
+  }
+}
