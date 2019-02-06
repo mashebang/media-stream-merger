@@ -1,4 +1,4 @@
-class SimpleStreamMerger {
+class MediaStreamMerger {
   constructor(options) {
     this.canvas = document.createElement('canvas');
     this.context = this.canvas.getContext('2d');
@@ -119,4 +119,4 @@ class SimpleStreamMerger {
   }
 }
 
-export default SimpleStreamMerger;
+export default MediaStreamMerger;
