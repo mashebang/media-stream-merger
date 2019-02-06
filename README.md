@@ -80,7 +80,7 @@ this.merger.start((stream) => {
 ```
 
 
-### merger.stopStreams()
+### merger.stopTracks()
 _Stop all streams and media usage started by merger_
 
 ### merger.result
