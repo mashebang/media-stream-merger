@@ -115,7 +115,7 @@ class MediaStreamMerger {
     this.draw();
   }
 
-  stopStreams = () => {
+  stopTracks = () => {
     this.streams.forEach(stream =>
       stream.video.srcObject.getTracks().forEach(track => track.stop())
     );
