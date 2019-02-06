@@ -12,12 +12,12 @@ class MediaStreamMerger {
   addStream = (stream, options) => {
     const streamId = stream.id;
     const video = document.createElement('video');
-    video.setAttribute('autoplay', true);
-    video.setAttribute('muted', true);
+    video.muted = true;
+    video.autoplay = true; 
     video.srcObject = stream;
     const {
       size, size: { width, height },
-      renderCoordinates, mute = false
+      renderCoordinates, mute = true
     } = options;
 
     if (width > this.canvas.width || height > this.canvas.height) {
@@ -67,12 +67,16 @@ class MediaStreamMerger {
 
   clearCanvas = () => {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    this.counter = 0;
+    this.cleanerCounter = 0;
   }
 
   draw = () => {
     if (!(this.streams.length > 1)) {
-      this.callback(this.streams[0].srcObject);
+
+      this.result = this.streams[0].srcObject;
+      if (this.callback)
+        this.callback();
+
       return;
     }
 
