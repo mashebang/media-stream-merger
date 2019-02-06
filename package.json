@@ -2,7 +2,7 @@
   "name": "media-stream-merger",
   "version": "0.0.1",
   "description": "it merges two or more MediaStream objects, resulting in only one",
-  "main": "MediaStreamMerger.js",
+  "main": "dist/MediaStreamMerger.js",
   "scripts": {
     "build": "babel src/MediaStreamMerger.js --out-dir dist"
   },
