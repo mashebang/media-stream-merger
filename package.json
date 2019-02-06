@@ -1,6 +1,6 @@
 {
   "name": "media-stream-merger",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "it merges two or more MediaStream objects, resulting in only one",
   "main": "dist/MediaStreamMerger.js",
   "scripts": {
