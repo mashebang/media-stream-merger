@@ -3,8 +3,9 @@
   "version": "0.0.8",
   "description": "it merges two or more MediaStream objects, resulting in only one",
   "main": "dist/MediaStreamMerger.js",
+  "module": "dist/MediaStreamMerger.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,10 @@
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/preset-env": "^7.3.1",
-    "rollup": "^1.1.2",
-    "rollup-plugin-babel": "^4.3.2"
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "babel-loader": "^8.0.5"
   }
 }
