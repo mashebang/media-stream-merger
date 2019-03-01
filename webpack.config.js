@@ -7,6 +7,9 @@ module.exports = {
   output: {
     filename: 'MediaStreamMerger.js',
     path: path.resolve(__dirname, 'dist'),
+    library: 'MediaStreamMerger',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [

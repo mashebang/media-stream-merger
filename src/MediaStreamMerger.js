@@ -15,6 +15,9 @@ class MediaStreamMerger {
     video.muted = true;
     video.autoplay = true; 
     video.srcObject = stream;
+    video.play()
+      .then(() => console.log('[media-stream-merger]: stream video is playing -> ', stream.id))
+      .catch(e => console.error('[media-stream-merger]: some error ocurred on playing stream video -> ', stream.id));
     const {
       size, size: { width, height },
       renderCoordinates, mute = true
@@ -62,7 +65,7 @@ class MediaStreamMerger {
       stream.addTrack(track);
     });
 
-    this.result = stream;
+    return stream;
   }
 
   clearCanvas = () => {
@@ -72,10 +75,9 @@ class MediaStreamMerger {
 
   draw = () => {
     if (!(this.streams.length > 1)) {
-
       this.result = this.streams[0].srcObject;
       if (this.callback)
-        this.callback();
+        this.callback(this.result);
 
       return;
     }
@@ -99,7 +101,7 @@ class MediaStreamMerger {
 
     if (this.firstCall) {
       this.firstCall = false;
-      this.injectAudioToStream(this.canvas.captureStream());
+      this.result = this.injectAudioToStream(this.canvas.captureStream());
 
       if (this.callback) {
         this.callback(this.result);
